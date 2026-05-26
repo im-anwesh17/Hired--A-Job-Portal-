@@ -74,7 +74,8 @@ export async function saveJob(token, { alreadySaved }, saveData) {
     const { data, error: deleteError } = await supabase
       .from("saved_jobs")
       .delete()
-      .eq("job_id", saveData.job_id);
+      .eq("job_id", saveData.job_id)
+      .eq("user_id", saveData.user_id);
 
     if (deleteError) {
       console.error("Error removing saved job:", deleteError);

@@ -140,7 +140,7 @@ const PostJob = () => {
                 <SelectContent>
                   <SelectGroup>
                     {companies?.map(({ name, id }) => (
-                      <SelectItem key={name} value={id}>
+                      <SelectItem key={name} value={String(id)}>
                         {name}
                       </SelectItem>
                     ))}
